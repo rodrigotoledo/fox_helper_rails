@@ -1,17 +1,17 @@
-<div id="<%= dom_id post %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+<div id="<%= dom_id post %>" class="flex flex-col space-y-10 my-10">
+  <div>
+    <strong class="font-medium mb-1">Title:</strong>
     <%= post.title %>
-  </p>
+  </div>
 
-  <div class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
+  <div>
+    <strong class="font-medium mb-1">Content:</strong>
     <%= post.content %>
   </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Active:</strong>
+  <div>
+    <strong class="font-medium mb-1">Active:</strong>
     <%= post.active %>
-  </p>
+  </div>
 
 </div>
