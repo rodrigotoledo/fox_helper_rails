@@ -43,7 +43,7 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 
-   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
@@ -51,9 +51,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-  gem 'faker'
-  gem 'guard' # NOTE: this is necessary in newer versions
-  gem 'guard-minitest'
+  gem "faker"
+  gem "guard" # NOTE: this is necessary in newer versions
+  gem "guard-minitest"
 end
 
 group :development do
@@ -67,5 +67,5 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'tailwindcss-rails'
-gem 'sidekiq'
+gem "tailwindcss-rails"
+gem "sidekiq"
