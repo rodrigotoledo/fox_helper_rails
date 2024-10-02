@@ -1,6 +1,6 @@
-# Course of Ruby on Rails 8 and Native Hotwire
+# World of Ruby on Rails 8, Tailwind and Full Users setup
 
-Unlock the power of Ruby on Rails 8 and build modern web applications with ease! In this course, you'll master the essentials of Rails combined with the sleek styling of Tailwind and the dynamic capabilities of Stimulus components. But we’re not stopping there. You’ll also dive into the exciting world of Hotwire Native, where you’ll learn how to extend your applications seamlessly to mobile platforms. Whether you're aiming for web or mobile, this course will equip you with the skills to build responsive, interactive apps from scratch!
+Unlock the power of Ruby on Rails 8 and build modern web applications with ease! In this course, you'll master the essentials of Rails combined with the sleek styling of Tailwind. But we’re not stopping there. Until now the Ruby on Rails don't have the registrations mechanism, so here you will understand about it.
 
 ## Dependencies
 
@@ -37,11 +37,9 @@ The idea of this course is show how have the same result using your fullstack Ru
 
 - Registration and Authorization
 - Dependents how take of you
-- System of localization and alerts
-- Triggers to dispatch actions and alerts
 - Testing
 
-### Registration and Authorization
+### Authorization
 
 Until now, when we try create the full authentication, since we use by default tailwind, the generator will try to create the .erb files using him, but they don't exists. So, tailwind-css gem isn't with main branch until now, you need set in `Gemfile` using this branch with:
 
@@ -54,6 +52,17 @@ And after just run:
 ```bash
 bundle update
 bin/rails generate authentication
+```
+
+But maybe the gem `tailwindcss-rails` ins't prepare for the new version of `rails`, so after run `generate authentication` you need to manually remove the `main` branch from `Gemfile`.
+
+```Gemfile
+gem "tailwindcss-rails"
+```
+
+And now start server
+
+```bash
 bin/dev
 ```
 
@@ -68,7 +77,18 @@ class HomeController < ApplicationController
 end
 ```
 
+And the result that `tailwind` returns is accessible in `http://localhost:3000/session/new`
+
+### Registration
+
+Let's create the registrations controller and actions
 
 ```bash
-bin/importmap pin @stimulus-components/character-counter
+bin/rails generate controller registrations new
+```
+
+Change in `routes.rb` the `registrations` resource
+
+```ruby
+resource :registrations, only: %i[create new]
 ```

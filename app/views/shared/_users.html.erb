@@ -1,0 +1,5 @@
+<div class="mt-4 text-sm text-gray-500 sm:mt-0">
+  <%= link_to "Create your account", new_registrations_path, class: "text-gray-700 underline" unless controller_name == 'registrations' %>
+  <%= link_to "Sign in", new_session_path, class: "text-gray-700 underline" unless controller_name == 'sessions' %>
+  <%= link_to "Forgot password?", new_password_path, class: "text-gray-700 underline" unless controller_name == 'passwords' %>
+</div>
