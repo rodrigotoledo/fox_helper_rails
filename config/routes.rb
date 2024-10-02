@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get "home", to: "home#index", as: :home
+  resource :registrations, only: %i[create new]
   resource :session
   resources :passwords, param: :token
-  root "home#index"
+  root "protected#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
