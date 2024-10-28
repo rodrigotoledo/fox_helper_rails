@@ -4,6 +4,14 @@ Unlock the power of Ruby on Rails 8 and build modern web applications with ease!
 
 ## Dependencies
 
+
+localtunnel
+
+```bash
+npm install -g localtunnel
+lt --port 3000
+```
+
 Ruby using **asdf** and last version of **Ruby on Rails**.
 
 For asdf just follow the instructions in https://asdf-vm.com/guide/getting-started.html

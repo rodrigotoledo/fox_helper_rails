@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
-    post "sign_up", to: "registrations#create", as: :sign_up
-    post "sign_in", to: "sessions#create", as: :sign_in
-    delete "logout", to: "sessions#destroy", as: :logout
+    post "sign-up", to: "registrations#create", as: :sign_up
+    post "sign-in", to: "sessions#create", as: :sign_in
+    delete "sign-out", to: "sessions#destroy", as: :sign_out
   end
   get "home", to: "home#index", as: :home
   resource :registrations, only: %i[create new]
