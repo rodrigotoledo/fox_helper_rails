@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :patients
   namespace :api do
+    resources :patients
     post "sign-up", to: "registrations#create", as: :sign_up
     post "sign-in", to: "sessions#create", as: :sign_in
     delete "sign-out", to: "sessions#destroy", as: :sign_out

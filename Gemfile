@@ -71,3 +71,4 @@ end
 gem "rack-cors", "~> 2.0"
 gem "jwt"
 gem "email_validator"
+gem "faker"

@@ -10,7 +10,6 @@ module Api
         token = login(user)
         render json: {user: user.attributes.except("password_digest"), token: token}, status: :created
       else
-        puts "erro ao autenticar"
         head :unprocessable_entity
       end
     end
