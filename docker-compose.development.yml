@@ -26,6 +26,7 @@ services:
     environment:
       BUNDLE_GEMFILE: /app/Gemfile
       REDIS_URL: redis://redis:6379/1
+      PORT: 3000
     command: bin/docker-dev-start-web.sh
     networks:
       - backend
