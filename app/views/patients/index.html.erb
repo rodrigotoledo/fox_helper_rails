@@ -10,6 +10,7 @@
     <%= link_to "New patient", new_patient_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
+  <%=turbo_stream_from :patients %>
   <div id="patients" class="min-w-full">
     <% @patients.each do |patient| %>
       <%= render patient %>
