@@ -36,7 +36,7 @@ gem "solid_cable"
 gem "bootsnap", require: false
 
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
-gem "kamal", ">= 2.0.0.rc2", require: false
+gem "kamal", ">= 2.0.0", require: false
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
@@ -46,15 +46,25 @@ gem "thruster", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "rspec-rails"
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
-  gem "annotate"
+  gem "annotaterb"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  gem "rails-controller-testing"
+  gem "bundler-audit"
+  gem "guard", require: false
+  gem "guard-rspec"
+  gem "factory_bot_rails"
   gem "rubocop-rails-omakase", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -69,6 +79,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
+  gem "database_cleaner-active_record"
+  gem "rspec-json_expectations"
+  gem "shoulda-matchers"
 end
 gem "rack-cors", "~> 2.0"
 gem "jwt"

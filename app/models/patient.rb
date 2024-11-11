@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: patients
+#
+#  id                :integer          not null, primary key
+#  address           :string
+#  email             :string
+#  emergency_type    :string
+#  name              :string
+#  phone             :string
+#  responsible       :string
+#  responsible_phone :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  user_id           :integer
+#
+# Indexes
+#
+#  index_patients_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  user_id  (user_id => users.id)
+#
 class Patient < ApplicationRecord
   belongs_to :user, optional: true
   enum :emergency_type, {
