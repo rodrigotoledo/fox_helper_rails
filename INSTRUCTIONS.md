@@ -70,10 +70,10 @@ docker compose -f docker-compose.development.yml run app rails db:migrate
 
 ## Security
 
-It's a good practice to use annotate, brakeman and rubocop when you are developing. You can setup your own configuration using the example that exists in `.vscode.example` renaming to `.vscode`. Also running docker command to annotate, cover with rubocop and brakeman:
+It's a good practice to use annotaterb, brakeman and rubocop when you are developing. You can setup your own configuration using the example that exists in `.vscode.example` renaming to `.vscode`. Also running docker command to annotaterb, cover with rubocop and brakeman:
 
 ```bash
-docker compose -f docker-compose.development.yml run app bundle exec annotate
+docker compose -f docker-compose.development.yml run app bundle exec annotaterb models
 docker compose -f docker-compose.development.yml run app bin/rubocop -A
 docker compose -f docker-compose.development.yml run app bundle exec brakeman
 ```
@@ -81,7 +81,7 @@ docker compose -f docker-compose.development.yml run app bundle exec brakeman
 or with just one command:
 
 ```bash
-docker compose -f docker-compose.development.yml run app bundle exec rubocop -A ; docker compose -f docker-compose.development.yml run app bundle exec brakeman ; docker compose -f docker-compose.development.yml run app bundle exec annotate
+docker compose -f docker-compose.development.yml run app bundle exec rubocop -A ; docker compose -f docker-compose.development.yml run app bundle exec brakeman ; docker compose -f docker-compose.development.yml run app bundle exec annotaterb models
 ```
 
 ## Putting Down

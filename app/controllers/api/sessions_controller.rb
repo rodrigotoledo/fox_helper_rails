@@ -4,7 +4,6 @@ module Api
   class SessionsController < ActionController::API
     include Api::Authentication
     def create
-      puts "Creating session"
       user = User.find_by(email_address: params[:email])
       if user&.authenticate(params[:password])
         token = login(user)
